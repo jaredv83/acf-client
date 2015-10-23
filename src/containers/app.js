@@ -1,6 +1,5 @@
 import { connect } from 'react-redux';
 import Component from '../components/App/App';
-import { logout } from '../redux/modules/auth';
 import { pushState } from 'redux-router';
 
 // Filter out menu items based on authentication.
@@ -26,7 +25,6 @@ function mapStateToProps({auth: {user}, db: {navLinks, support, title, image, de
 }
 
 const mapDispatchToProps = {
-  logout,
   pushState,
 };
 

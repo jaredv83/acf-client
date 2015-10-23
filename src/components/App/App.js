@@ -2,7 +2,6 @@ import React, { Component, PropTypes } from 'react';
 import { IndexLink, Link } from 'react-router';
 import DocumentMeta from 'react-document-meta';
 import { isLoaded as isInfoLoaded, load as loadInfo } from 'redux/modules/info';
-import { isLoaded as isAuthLoaded, load as loadAuth } from 'redux/modules/auth';
 
 function makeMeta({title, description, image}) {
   return {
@@ -79,9 +78,6 @@ export default class App extends Component {
     const promises = [];
     if (!isInfoLoaded(getState())) {
       promises.push(dispatch(loadInfo()));
-    }
-    if (!isAuthLoaded(getState())) {
-      promises.push(dispatch(loadAuth()));
     }
     return Promise.all(promises);
   }
