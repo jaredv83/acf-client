@@ -1,3 +1,4 @@
+import memberList from './memberList';
 
 function createNavLink(id, args = {}) {
   const {text, to, authenticated, rest} = args;
@@ -13,7 +14,7 @@ function createNavLink(id, args = {}) {
 export default {
   members: {
     filters: {},
-    data: [],
+    data: memberList,
   },
   db: {
     support: {
