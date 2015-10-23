@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 
 class MembersPreview extends Component {
@@ -30,15 +30,15 @@ class MembersPreview extends Component {
 }
 
 MembersPreview.propTypes = {
-  displayName: React.PropTypes.string.isRequired,
-  image: React.PropTypes.shape({
-    uri: React.PropTypes.string.isRequired,
-    height: React.PropTypes.number,
-    width: React.PropTypes.number,
+  displayName: PropTypes.string.isRequired,
+  image: PropTypes.shape({
+    uri: PropTypes.string.isRequired,
+    height: PropTypes.number,
+    width: PropTypes.number,
   }),
-  intro: React.PropTypes.string,
-  slug: React.PropTypes.string.isRequired,
-  usState: React.PropTypes.string,
+  intro: PropTypes.string,
+  slug: PropTypes.string.isRequired,
+  usState: PropTypes.string,
 };
 
 export default MembersPreview;
