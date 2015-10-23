@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router';
 
 class MembersPreview extends Component {
 
@@ -19,7 +20,7 @@ class MembersPreview extends Component {
           width: 'calc(100% - 150px);',
         }}>
           <p>
-            <a href={slug}>{displayName}</a>
+            <Link to={ `/members/${slug}` }>{displayName}</Link>
           </p>
           <p>{intro}</p>
         </div>
