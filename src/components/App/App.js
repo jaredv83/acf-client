@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { IndexLink, Link } from 'react-router';
 import DocumentMeta from 'react-document-meta';
 import { isLoaded as isInfoLoaded, load as loadInfo } from 'redux/modules/info';
+import { isLoaded as isMembersLoaded, load as loadMembers } from 'redux/modules/members';
 
 function makeMeta({title, description, image}) {
   return {
@@ -75,8 +76,12 @@ export default class App extends Component {
 
   static fetchData(getState, dispatch) {
     const promises = [];
-    if (!isInfoLoaded(getState())) {
+    const state = getState();
+    if (!isInfoLoaded(state)) {
       promises.push(dispatch(loadInfo()));
+    }
+    if (!isMembersLoaded(state)) {
+      promises.push(dispatch(loadMembers()));
     }
     return Promise.all(promises);
   }

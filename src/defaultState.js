@@ -1,5 +1,3 @@
-import memberList from './memberList';
-
 function createNavLink(id, args = {}) {
   const {text, to, authenticated, rest} = args;
   return {
@@ -12,10 +10,6 @@ function createNavLink(id, args = {}) {
 }
 
 export default {
-  members: {
-    filters: {},
-    data: memberList,
-  },
   db: {
     support: {
       chat: 'https://www.hipchat.com/gv1XLjgaV',
