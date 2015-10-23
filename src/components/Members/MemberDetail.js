@@ -77,7 +77,7 @@ class MembersDetail extends Component {
                 {/* /BUTTONS */}
                 {/* Logo */}
                 <a className="logo pull-left" href="index.html">
-                  <img src="/images/logo_dark.png" alt />
+                  <img src="https://composersforum.org/sites/all/themes/acfzen/acfzen/logo.png" alt />
                 </a>
                 {/*
 							Top Nav
