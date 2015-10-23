@@ -2,32 +2,17 @@ import React, { Component, PropTypes } from 'react';
 
 class MembersDetail extends Component {
 
+  createMarkup(html) {
+    return {
+      __html: html,
+    };
+  }
+
   render() {
-    const {displayName, image} = this.props;
+    const {displayName, image, bio} = this.props;
 
     return (
       <div>
-        {/*
-		AVAILABLE BODY CLASSES:
-
-		smoothscroll 			= create a browser smooth scroll
-		enable-animation		= enable WOW animations
-
-		bg-grey					= grey background
-		grain-grey				= grey grain background
-		grain-blue				= blue grain background
-		grain-green				= green grain background
-		grain-blue				= blue grain background
-		grain-orange			= orange grain background
-		grain-yellow			= yellow grain background
-
-		boxed 					= boxed layout
-		pattern1 ... patern11	= pattern background
-		menu-vertical-hide		= hidden, open on click
-
-		BACKGROUND IMAGE [together with .boxed class]
-		data-background="/images/boxed_background/1.jpg"
-	*/}
         {/* SLIDE TOP */}
         <div id="slidetop">
           <div className="container">
@@ -61,32 +46,6 @@ class MembersDetail extends Component {
         {/* /SLIDE TOP */}
         {/* wrapper */}
         <div id="wrapper">
-          {/*
-				AVAILABLE HEADER CLASSES
-
-				Default nav height: 96px
-				.header-md 		= 70px nav height
-				.header-sm 		= 60px nav height
-
-				.noborder 		= remove bottom border (only with transparent use)
-				.transparent	= transparent header
-				.translucent	= translucent header
-				.sticky			= sticky header
-				.static			= static header
-				.dark			= dark header
-				.bottom			= header on bottom
-
-				shadow-before-1 = shadow 1 header top
-				shadow-after-1 	= shadow 1 header bottom
-				shadow-before-2 = shadow 2 header top
-				shadow-after-2 	= shadow 2 header bottom
-				shadow-before-3 = shadow 3 header top
-				shadow-after-3 	= shadow 3 header bottom
-
-				.clearfix		= required for mobile menu, do not remove!
-
-				Example Usage:  class="clearfix sticky header-sm transparent noborder"
-			*/}
           <div id="header" className="sticky clearfix">
             {/* TOP NAV */}
             <header id="topNav">
@@ -114,41 +73,6 @@ class MembersDetail extends Component {
                     </div>
                   </li>
                   {/* /SEARCH */}
-                  {/* QUICK SHOP CART */}
-                  <li className="quick-cart">
-                    <a href="#">
-                      <span className="badge badge-aqua btn-xs badge-corner">2</span>
-                      <i className="fa fa-shopping-cart" />
-                    </a>
-                    <div className="quick-cart-box">
-                      <h4>Shop Cart</h4>
-                      <div className="quick-cart-wrapper">
-                        <a href="#">{/* cart item */}
-                          <img src="/images/demo/people/300x300/4-min.jpg" width={45} height={45} alt />
-                          <h6><span>2x</span> RED BAG WITH HUGE POCKETS</h6>
-                          <small>$37.21</small>
-                        </a>{/* /cart item */}
-                        <a href="#">{/* cart item */}
-                          <img src="/images/demo/people/300x300/5-min.jpg" width={45} height={45} alt />
-                          <h6><span>2x</span> THIS IS A VERY LONG TEXT AND WILL BE TRUNCATED</h6>
-                          <small>$17.18</small>
-                        </a>{/* /cart item */}
-                        {/* cart no items example */}
-                        {/*
-										<a class="text-center" href="#">
-											<h6>0 ITEMS ON YOUR CART</h6>
-										</a>
-										*/}
-                      </div>
-                      {/* quick cart footer */}
-                      <div className="quick-cart-footer clearfix">
-                        <a href="shop-cart.html" className="btn btn-primary btn-xs pull-right">VIEW CART</a>
-                        <span className="pull-left"><strong>TOTAL:</strong> $54.39</span>
-                      </div>
-                      {/* /quick cart footer */}
-                    </div>
-                  </li>
-                  {/* /QUICK SHOP CART */}
                 </ul>
                 {/* /BUTTONS */}
                 {/* Logo */}
@@ -1163,9 +1087,9 @@ class MembersDetail extends Component {
                     <div className="box1 noradius">
                       <div className="box-icon-title">
                         <i className="fa fa-user" />
-                        <h2>Felica Doe – Profile</h2>
+                        <h2>{displayName} – Profile</h2>
                       </div>
-                      <p>Nullam id dolor id nibh ultricies vehicula ut id elit. Integer posuere erat a ante venenatis dapibus posuere</p>
+                      <div dangerouslySetInnerHTML={this.createMarkup(bio)} />
                     </div>
                   </div>
                   <div className="back">
@@ -1543,17 +1467,13 @@ class MembersDetail extends Component {
           </footer>
           {/* /FOOTER */}
         </div>
-        {/* /wrapper */}
-        {/* SCROLL TO TOP */}
-        <a href="#" id="toTop" />
-        {/* JAVASCRIPT FILES */}
-        {/* STYLESWITCHER - REMOVE */}
       </div>
     );
   }
 }
 
 MembersDetail.propTypes = {
+  bio: PropTypes.string,
   displayName: PropTypes.string.isRequired,
   image: PropTypes.shape({
     uri: PropTypes.string.isRequired,
