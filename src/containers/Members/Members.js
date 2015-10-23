@@ -39,3 +39,6 @@ export default class About extends Component {
     );
   }
 }
+Members.propTypes = {
+  members: React.PropTypes.array,
+};
