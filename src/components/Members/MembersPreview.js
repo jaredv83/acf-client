@@ -3,12 +3,26 @@ import React, { Component } from 'react';
 class MembersPreview extends Component {
 
   render() {
-    const {displayName, intro} = this.props;
+    const {displayName, image, intro, slug} = this.props;
 
+    // TODO: remove inline styles and implement a system
     return (
-      <div>
-        <p>{displayName}</p>
-        <p>{intro}</p>
+      <div style={{
+        height: '200px',
+      }}>
+        <img src={image.uri} style={{
+          maxHeight: '75px',
+          float: 'left',
+        }} />
+        <div style={{
+          float: 'right',
+          width: 'calc(100% - 100px);',
+        }}>
+          <p>
+            <a href={slug}>{displayName}</a>
+          </p>
+          <p>{intro}</p>
+        </div>
       </div>
     );
   }
