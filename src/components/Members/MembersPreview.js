@@ -4,7 +4,6 @@ class MembersPreview extends Component {
 
   render() {
     const {displayName, intro} = this.props;
-    console.log(displayName);
 
     return (
       <div>
