@@ -11,6 +11,10 @@ function createNavLink(id, args = {}) {
 }
 
 export default {
+  members: {
+    filters: {},
+    data: [],
+  },
   db: {
     support: {
       chat: 'https://www.hipchat.com/gv1XLjgaV',
