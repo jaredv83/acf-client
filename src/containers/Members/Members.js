@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import DocumentMeta from 'react-document-meta';
+import MembersPreview from './MembersPreview';
 
 class Members extends Component {
 
@@ -28,17 +29,24 @@ class Members extends Component {
         usState: 'MN',
       },
     ];
+    const MemberList = fakeMembers.map((member) => {
+      return (
+        <MembersPreview {...member} />
+      );
+    });
+
+
     return (
       <div className="container">
         <h1>Members</h1>
-        <DocumentMeta title="CAPE: Members"/>
+        <DocumentMeta title="CAPE: Members" />
 
-        <p>Some membership directory thing.</p>
-
+        {MemberList}
       </div>
     );
   }
 }
+
 Members.propTypes = {
   members: React.PropTypes.array,
 };
