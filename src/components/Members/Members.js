@@ -38,7 +38,7 @@ class Members extends Component {
         {
           members.map((member) => {
             return (
-              <MembersPreview {...member} />
+              <MembersPreview key={member.slug} {...member} />
             );
           })
         }
