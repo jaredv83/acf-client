@@ -17,7 +17,7 @@ class MembersPreview extends Component {
         }} />
         <div style={{
           float: 'right',
-          width: 'calc(100% - 150px);',
+          width: 'calc(100% - 150px)',
         }}>
           <p>
             <Link to={ `/members/${slug}` }>{displayName}</Link>
