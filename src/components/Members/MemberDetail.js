@@ -58,7 +58,7 @@ class MembersDetail extends Component {
                 <ul className="pull-right nav nav-pills nav-second-main">
                   {/* SEARCH */}
                   <li className="search">
-                    <a href="javascript:;">
+                    <a href="#">
                       <i className="fa fa-search" />
                     </a>
                     <div className="search-box">
@@ -1037,7 +1037,7 @@ class MembersDetail extends Component {
                   <li className="list-group-item"><a href="page-profile-comments.html"><i className="fa fa-comments-o" /> COMMENTS</a></li>
                   <li className="list-group-item"><a href="page-profile-history.html"><i className="fa fa-history" /> HISTORY</a></li>
                   <li className="list-group-item"><a href="page-profile-settings.html"><i className="fa fa-gears" /> SETTINGS</a></li>
-                  <li className="list-group-item list-toggle">   {/* NOTE: "active" to be open on page load */}
+                  <li className="list-group-item list-toggle">
                     <a data-toggle="collapse" data-parent="#sidebar-nav" href="#collapse-1">DROPDOWN EXAMPLE</a>
                     <ul id="collapse-1" className="collapse">{/* NOTE: "collapse in" to be open on page load */}
                       <li><a href="#"><i className="fa fa-angle-right" /> SUMBENU 1</a></li>
