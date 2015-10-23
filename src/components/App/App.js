@@ -45,7 +45,6 @@ export default class App extends Component {
     children: PropTypes.object.isRequired,
     navLinks: PropTypes.array.isRequired,
     user: PropTypes.object,
-    logout: PropTypes.func.isRequired,
     pushState: PropTypes.func.isRequired,
     support: PropTypes.object.isRequired,
     title: PropTypes.string.isRequired,
