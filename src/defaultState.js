@@ -22,6 +22,7 @@ export default {
     tagline: 'Create Anywhere Publish Everywhere',
     navLinks: [
       createNavLink('about', {text: 'About Us'}),
+      createNavLink('members'),
     ],
   },
 };
