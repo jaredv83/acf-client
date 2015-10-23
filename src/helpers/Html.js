@@ -30,6 +30,8 @@ export default class Html extends Component {
           {DocumentMeta.renderAsReact()}
 
           <link rel="shortcut icon" href="/favicon.ico" />
+          {/* TODO: isolate necessary styles and don't include this monster*/}
+          <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
           <link href="/css/react-select.css" rel="stylesheet" type="text/css" />
           <link href="/css/react-widgets.css" rel="stylesheet" type="text/css" />
           {/* styles (will be present only in production with webpack extract text plugin) */}
@@ -37,6 +39,7 @@ export default class Html extends Component {
             <link href={assets.styles[style]} key={key} media="screen, projection"
                   rel="stylesheet" type="text/css"/>
           )}
+          <link href="/css/original-giant-theme.css" rel="stylesheet" type="text/css" />
         </head>
         <body>
           <div id="content" dangerouslySetInnerHTML={{__html: content}}/>
