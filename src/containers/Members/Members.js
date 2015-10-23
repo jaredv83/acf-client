@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import DocumentMeta from 'react-document-meta';
 
-export default class About extends Component {
+class Members extends Component {
 
   render() {
     const fakeMembers = [
@@ -42,3 +42,5 @@ export default class About extends Component {
 Members.propTypes = {
   members: React.PropTypes.array,
 };
+
+export default Members;
