@@ -80,10 +80,10 @@ export default class App extends Component {
     const headMeta = makeMeta({title, description, image});
     const styles = require('./App.scss');
     return (
-      <div className={styles.app}>
+      <div id="wrapper" className={styles.app}>
         <DocumentMeta { ...headMeta } />
         {/* <Navbar /> */}
-        <Header navLinks={navLinks} user={user} />
+        <Header navLinks={navLinks} styles={styles} title={title} user={user} />
         <div className={styles.appContent}>
           {this.props.children}
         </div>
