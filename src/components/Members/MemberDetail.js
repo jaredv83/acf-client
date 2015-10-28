@@ -13,7 +13,7 @@ class MembersDetail extends Component {
   }
 
   render() {
-    const { displayName, image, bio, since } = this.props;
+    const { address, displayName, image, intro, bio, since } = this.props;
 
     return (
       <div>
@@ -41,15 +41,8 @@ class MembersDetail extends Component {
           <div className="container">
             {/* LEFT */}
             <div className="col-lg-3 col-md-3 col-sm-4">
-              <InfoBox image={image} displayName={displayName} since={since} />
-              {/* completed */}
-              <div className="margin-bottom-30">
-                <label>88% completed profile</label>
-                <div className="progress progress-xxs">
-                  <div className="progress-bar progress-bar-danger" role="progressbar" aria-valuenow={88} aria-valuemin={0} aria-valuemax={100} style={{width: '88%', minWidth: '2em'}} />
-                </div>
-              </div>
-              {/* /completed */}
+              <InfoBox address={address} image={image} displayName={displayName} since={since} intro={intro}/>
+
               {/* SIDE NAV */}
               <ul className="side-nav list-group margin-bottom-60" id="sidebar-nav">
                 <li className="list-group-item active"><a href="page-profile.html"><i className="fa fa-eye" /> PROFILE</a></li>
@@ -112,13 +105,6 @@ class MembersDetail extends Component {
                     <div dangerouslySetInnerHTML={this.createMarkup(bio)} />
                   </div>
                 </div>
-                <div className="back">
-                  <div className="box2 noradius">
-                    <h4>WHO AM I?</h4>
-                    <hr />
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas metus nulla, commodo a sodales sed, dignissim pretium nunc. Nam et lacus neque. Ut enim massa, sodales tempor convallis et, iaculis ac massa. Maecenas metus nulla, commodo a sodales sed, dignissim pretium nunc. Nam et lacus neque.</p>
-                  </div>
-                </div>
               </div>
               <Right displayName={displayName} />
             </div>
@@ -134,6 +120,7 @@ class MembersDetail extends Component {
 }
 
 MembersDetail.propTypes = {
+  address: PropTypes.object,
   bio: PropTypes.string,
   displayName: PropTypes.string.isRequired,
   image: PropTypes.shape({
@@ -144,6 +131,7 @@ MembersDetail.propTypes = {
   intro: PropTypes.string,
   since: PropTypes.string,
   slug: PropTypes.string.isRequired,
+  statement: PropTypes.string,
   usState: PropTypes.string,
 };
 
