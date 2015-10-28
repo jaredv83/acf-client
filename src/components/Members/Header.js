@@ -51,12 +51,14 @@ function Header({ navLinks }) {
             <nav className="nav-main">
               <ul id="topMain" className="nav nav-pills nav-main">
                 {
+                  /* Inline navigation link style */
                   navLinks.map( ({id, to, className, text}) => (
                     <li key={id} className={className}>
                       <NavbarLink to={to}>{text}</NavbarLink>
                     </li>
                   ))
                 }
+                {/* Dropdown navigation link style */}
                 <li className="dropdown">
                   <a className="dropdown-toggle" href="#">
                     DROPDOWN EXAMPLE
