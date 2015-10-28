@@ -141,9 +141,11 @@ MembersDetail.propTypes = {
     width: PropTypes.number,
   }),
   intro: PropTypes.string,
+  links: PropTypes.array,
   since: PropTypes.string,
   slug: PropTypes.string.isRequired,
   statement: PropTypes.string,
+  twitter: PropTypes.array,
   usState: PropTypes.string,
 };
 
