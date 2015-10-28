@@ -13,7 +13,8 @@ class MembersDetail extends Component {
   }
 
   render() {
-    const { address, displayName, image, intro, bio, since } = this.props;
+    const { address, displayName, image, intro, links,
+            bio, since, statement, twitter } = this.props;
 
     return (
       <div>
@@ -85,7 +86,18 @@ class MembersDetail extends Component {
                   <h2 className="size-18 text-muted margin-bottom-6"><b>About</b> {displayName}</h2>
                   <p>Lorem ipsum dolor sit amet diam nonummy nibh dolore.</p>
                   <ul className="list-unstyled nomargin">
-                    <li className="margin-bottom-10"><i className="fa fa-globe width-20 hidden-xs hidden-sm" /> <a href="http://www.stepofweb.com">www.stepofweb.com</a></li>
+                    {
+                      links.map((link) => {
+                        return (
+                          <li className="margin-bottom-10">
+                            <i className="fa fa-globe width-20 hidden-xs hidden-sm" />
+                            <a href={link.url}>
+                              {link.title}
+                            </a>
+                          </li>
+                        );
+                      })
+                    }
                     <li className="margin-bottom-10"><i className="fa fa-facebook width-20 hidden-xs hidden-sm" /> <a href="http://www.facebook.com/stepofweb">stepofweb</a></li>
                     <li className="margin-bottom-10"><i className="fa fa-twitter width-20 hidden-xs hidden-sm" /> <a href="http://www.twitter.com/stepofweb">@stepofweb</a></li>
                   </ul>
