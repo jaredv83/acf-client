@@ -1,5 +1,4 @@
 import React, { Component, PropTypes } from 'react';
-import { IndexLink, Link } from 'react-router';
 import DocumentMeta from 'react-document-meta';
 import { isLoaded as isInfoLoaded, load as loadInfo } from 'redux/modules/info';
 import { isLoaded as isMembersLoaded, load as loadMembers } from 'redux/modules/members';
@@ -28,18 +27,6 @@ function makeMeta({title, description, image}) {
     },
   };
 }
-
-const NavbarLink = ({to, className, component, children}) => {
-  const Comp = component || Link;
-
-  return (
-    <Comp to={to} className={className} activeStyle={{
-      color: '#33e0ff',
-    }}>
-      {children}
-    </Comp>
-  );
-};
 
 export default class App extends Component {
   static propTypes = {
@@ -88,40 +75,13 @@ export default class App extends Component {
 
   // Is that really the best way to decide what menu items to display?
   render() {
-    const { user, navLinks, support, title, description, image } = this.props;
+    const { support, title, description, image, ...rest } = this.props;
     const headMeta = makeMeta({title, description, image});
     const styles = require('./App.scss');
     return (
       <div className={styles.app}>
         <DocumentMeta { ...headMeta } />
-
-        <nav className="navbar navbar-default navbar-fixed-top">
-          <div className="container">
-            <NavbarLink to="/" className="navbar-brand" component={IndexLink}>
-              <div className={styles.brand}/>
-              { title }
-            </NavbarLink>
-
-            <ul className="nav navbar-nav">
-              {
-                navLinks.map( ({id, to, className, text}) => (
-                  <li key={id} className={className}>
-                    <NavbarLink to={to}>{text}</NavbarLink>
-                  </li>
-                ))
-              }
-            </ul>
-            {user &&
-            <p className={styles.loggedInMessage + ' navbar-text'}>Logged in as <strong>{user.name}</strong>.</p>}
-            <ul className="nav navbar-nav navbar-right">
-              <li>
-                <a href="https://github.com/cape-io/cape-editor"
-                   target="_blank" title="View on Github"><i className="fa fa-github"/></a>
-              </li>
-            </ul>
-          </div>
-        </nav>
-
+        {/* <Navbar /> */}
         <div className={styles.appContent}>
           {this.props.children}
         </div>
