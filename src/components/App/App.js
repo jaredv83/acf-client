@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import DocumentMeta from 'react-document-meta';
 import { isLoaded as isInfoLoaded, load as loadInfo } from 'redux/modules/info';
 import { isLoaded as isMembersLoaded, load as loadMembers } from 'redux/modules/members';
+import Header from '../Members/Header';
 
 function makeMeta({title, description, image}) {
   return {
@@ -75,13 +76,14 @@ export default class App extends Component {
 
   // Is that really the best way to decide what menu items to display?
   render() {
-    const { support, title, description, image, ...rest } = this.props;
+    const { user, navLinks, support, title, description, image, ...rest } = this.props;
     const headMeta = makeMeta({title, description, image});
     const styles = require('./App.scss');
     return (
       <div className={styles.app}>
         <DocumentMeta { ...headMeta } />
         {/* <Navbar /> */}
+        <Header navLinks={navLinks} user={user} />
         <div className={styles.appContent}>
           {this.props.children}
         </div>
