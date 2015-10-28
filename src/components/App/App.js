@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import DocumentMeta from 'react-document-meta';
-import { isLoaded as isInfoLoaded, load as loadInfo } from 'redux/modules/info';
 import { isLoaded as isMembersLoaded, load as loadMembers } from 'redux/modules/members';
+import { isLoaded as isTwitterLoaded, load as loadTwitter } from 'redux/modules/twitter';
 
 function makeMeta({title, description, image}) {
   return {
@@ -64,11 +64,11 @@ export default class App extends Component {
   static fetchData(getState, dispatch) {
     const promises = [];
     const state = getState();
-    if (!isInfoLoaded(state)) {
-      promises.push(dispatch(loadInfo()));
-    }
     if (!isMembersLoaded(state)) {
       promises.push(dispatch(loadMembers()));
+    }
+    if (!isTwitterLoaded(state)) {
+      promises.push(dispatch(loadTwitter()));
     }
     return Promise.all(promises);
   }
