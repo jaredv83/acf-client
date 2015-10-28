@@ -29,7 +29,7 @@ class MembersDetail extends Component {
               {/* breadcrumbs */}
               <ol className="breadcrumb breadcrumb-inverse">
                 <li><a href="#">Home</a></li>
-                <li><a href="#">Pages</a></li>
+                <li><a href="#">Members</a></li>
                 <li className="active">{displayName}</li>
               </ol>{/* /breadcrumbs */}
             </div>
