@@ -6,14 +6,14 @@ const NavbarLink = ({to, className, component, children}) => {
 
   return (
     <Comp to={to} className={className} activeStyle={{
-      color: '#33e0ff',
+      color: '#A94545',
     }}>
       {children}
     </Comp>
   );
 };
 
-function Header({ navLinks, styles, title, user }) {
+function Header({ navLinks }) {
   return (
     <div id="header" className="sticky clearfix">
       <header id="topNav">
@@ -44,25 +44,22 @@ function Header({ navLinks, styles, title, user }) {
           </ul>
           {/* /BUTTONS */}
           {/* Logo */}
-          <a className="logo pull-left" href="index.html">
+          <NavbarLink to="/" className="logo pull-left" component={IndexLink}>
             <img src="https://composersforum.org/sites/all/themes/acfzen/acfzen/logo.png" alt />
-          </a>
+          </NavbarLink>
           <div className="navbar-collapse pull-right nav-main-collapse collapse">
             <nav className="nav-main">
-              {/*
-            NOTE
-
-            For a regular link, remove "dropdown" class from LI tag and "dropdown-toggle" class from the href.
-            Direct Link Example:
-
-            <li>
-              <a href="#">HOME</a>
-            </li>
-          */}
               <ul id="topMain" className="nav nav-pills nav-main">
+                {
+                  navLinks.map( ({id, to, className, text}) => (
+                    <li key={id} className={className}>
+                      <NavbarLink to={to}>{text}</NavbarLink>
+                    </li>
+                  ))
+                }
                 <li className="dropdown">
                   <a className="dropdown-toggle" href="#">
-                    HOME
+                    DROPDOWN EXAMPLE
                   </a>
                   <ul className="dropdown-menu">
                     {
