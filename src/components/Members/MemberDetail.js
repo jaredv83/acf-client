@@ -118,7 +118,7 @@ class MembersDetail extends Component {
                   </div>
                 </div>
               </div>
-              <Right displayName={displayName} />
+              <Right displayName={displayName} twitter={twitter} />
             </div>
           </div>
         </section>
