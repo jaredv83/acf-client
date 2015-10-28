@@ -41,7 +41,7 @@ class MembersDetail extends Component {
           <div className="container">
             {/* LEFT */}
             <div className="col-lg-3 col-md-3 col-sm-4">
-              <InfoBox address={address} image={image} displayName={displayName} since={since} intro={intro}/>
+              <InfoBox address={address} image={image} displayName={displayName} since={since} intro={this.createMarkup(intro)}/>
 
               {/* SIDE NAV */}
               <ul className="side-nav list-group margin-bottom-60" id="sidebar-nav">

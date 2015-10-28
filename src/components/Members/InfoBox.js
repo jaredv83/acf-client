@@ -13,16 +13,14 @@ function InfoBox({ address, image, intro, displayName, since }) {
       <h3 className="size-11 margin-top-0 margin-bottom-10 text-muted">
         {address.city}, {address.state}
       </h3>
-      <p>
-        {intro}
-      </p>
+      <p dangerouslySetInnerHTML={intro} />
     </div>
   );
 }
 InfoBox.propTypes = {
   address: PropTypes.object,
   image: PropTypes.object,
-  intro: PropTypes.string,
+  intro: PropTypes.object,
   displayName: PropTypes.string,
   since: PropTypes.string,
   statement: PropTypes.string,
