@@ -19,11 +19,6 @@ class MembersDetail extends Component {
       <div>
         {/* wrapper */}
         <div id="wrapper">
-          <div id="header" className="sticky clearfix">
-            {/* TOP NAV */}
-            <Header />
-            {/* /Top Nav */}
-          </div>
           <section className="page-header page-header-xs">
             <div className="container">
               {/* breadcrumbs */}
