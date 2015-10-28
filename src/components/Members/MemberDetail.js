@@ -84,7 +84,7 @@ class MembersDetail extends Component {
                 {/* /info */}
                 <div className="text-muted">
                   <h2 className="size-18 text-muted margin-bottom-6"><b>About</b> {displayName}</h2>
-                  <p>Lorem ipsum dolor sit amet diam nonummy nibh dolore.</p>
+                  <p dangerouslySetInnerHTML={this.createMarkup(statement)} />
                   <ul className="list-unstyled nomargin">
                     {
                       links.map((link) => {
