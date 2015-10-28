@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import {Link} from 'react-router';
 import InfoBox from './InfoBox';
 import Footer from './Footer';
 import Right from './Right';
@@ -20,8 +21,16 @@ class MembersDetail extends Component {
           <div className="container">
             {/* breadcrumbs */}
             <ol className="breadcrumb breadcrumb-inverse">
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Members</a></li>
+              <li>
+                <Link to="/">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link to="/members">
+                  Members
+                </Link>
+              </li>
               <li className="active">{displayName}</li>
             </ol>{/* /breadcrumbs */}
           </div>
