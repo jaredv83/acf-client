@@ -87,18 +87,6 @@ export default class App extends Component {
         <div className={styles.appContent}>
           {this.props.children}
         </div>
-
-        <div className="well text-center">
-          {'Have questions? Ask for help in the '}
-          <a href={support.chat} target="_blank">
-            {'CAPE Support HipChat Room'}
-          </a>
-          {' or file bugs via '}
-          <a href={support.bugs} target="_blank">
-            {'Github Issues'}
-          </a>.
-        </div>
-
       </div>
     );
   }
