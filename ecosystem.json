@@ -1,0 +1,13 @@
+{
+  "apps" : [
+    {
+      "name"      : "PROXY",
+      "script"    : "index.js",
+      "env_production" : {
+        "NODE_ENV": "production",
+        "NODE_PATH": "./src",
+        "PORT": 3010
+      }
+    },
+  ],
+}
