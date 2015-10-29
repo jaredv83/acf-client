@@ -1,13 +1,14 @@
 import React, { PropTypes } from 'react';
 
 function InfoBox({ address, image, intro, displayName, since }) {
+  const memberSince = `Member since: ${since}`;
   return (
     <div className="thumbnail text-center">
       { image && <img src={image.uri} alt /> }
       <h2 className="size-18 margin-top-10 margin-bottom-0">{displayName}</h2>
       { since &&
         <h3 className="size-11 margin-top-0 margin-bottom-10 text-muted">
-          {since}
+          {memberSince}
         </h3>
       }
       <h3 className="size-11 margin-top-0 margin-bottom-10 text-muted">
