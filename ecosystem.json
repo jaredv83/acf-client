@@ -2,7 +2,7 @@
   "apps" : [
     {
       "name"      : "ACF",
-      "script"    : "index.js",
+      "script"    : "./bin/server.js",
       "env_production" : {
         "NODE_ENV": "production",
         "NODE_PATH": "./src",
