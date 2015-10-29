@@ -13,7 +13,7 @@
     }
   ],
   "license": "MIT",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "repository": {
     "type": "git",
     "url": "https://github.com/cape-io/acf-client"
@@ -21,8 +21,9 @@
   "bugs": {
     "url": "https://github.com/cape-io/acf-client/issues"
   },
-  "homepage": "",
+  "homepage": "http://dev.composersforum.us",
   "keywords": [
+    "acf",
     "react",
     "isomorphic",
     "universal",
@@ -80,7 +81,7 @@
     "lodash.find": "^3.2.1",
     "lru-memoize": "1.0.0",
     "map-props": "1.0.0",
-    "moment": "^2.10.6",
+    "moment": "2.x",
     "multireducer": "1.0.2",
     "piping": "0.3.0",
     "pretty-error": "1.2.0",
@@ -108,7 +109,7 @@
     "babel-loader": "^5.3.2",
     "babel-plugin-react-transform": "^1.1.1",
     "babel-runtime": "^5.8.25",
-    "better-npm-run": "^0.0.2",
+    "better-npm-run": "^0.0.3",
     "bootstrap-sass": "^3.3.5",
     "bootstrap-sass-loader": "^1.0.9",
     "chai": "^3.3.0",
