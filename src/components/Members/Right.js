@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import moment from 'moment';
 
-function Right({ displayName, twitter }) {
+function Right({ displayName, twitter, recentWorks }) {
   return (
     <div>
       <div className="box-light">{/* .box-light OR .box-dark */}
@@ -14,7 +14,7 @@ function Right({ displayName, twitter }) {
                 RECENT TWEETS
               </h3>
               <div>
-                {
+                { twitter &&
                   twitter.map((tweet) => {
                     const timeAgo = moment(tweet.created_at).fromNow();
                     return (
@@ -37,50 +37,13 @@ function Right({ displayName, twitter }) {
           <div className="col-md-6 col-sm-6">
             <div className="box-inner">
               <h3>
-                <a className="pull-right size-11 text-warning" href="#">VIEW ALL</a>
-                FRIENDS
+                <span>RECENT WORKS</span>
               </h3>
-              <div className="height-250 slimscroll" data-always-visible="true" data-size="5px" data-position="right" data-opacity="0.4" disable-body-scroll="true">
-                <div className="clearfix margin-bottom-10">{/* squared item */}
-                  <img className="thumbnail pull-left" src="/images/demo/people/300x300/1-min.jpg" width={40} height={40} alt />
-                  <h4 className="size-14 nomargin noborder nopadding bold"><a href="#">Joana Doe</a></h4>
-                  <span className="size-12 text-muted">Lorem ipsum dolor sit amet.</span>
-                </div>{/* /squared item */}
-                <div className="clearfix margin-bottom-10">{/* rounded item */}
-                  <img className="thumbnail pull-left rounded" src="/images/demo/people/300x300/2-min.jpg" width={40} height={40} alt />
-                  <h4 className="size-14 nomargin noborder nopadding bold"><a href="#">Melissa Doe</a></h4>
-                  <span className="size-12 text-muted">Lorem ipsum dolor sit amet.</span>
-                </div>{/* /rounded item */}
-                <div className="clearfix margin-bottom-10">{/* squared item */}
-                  <img className="thumbnail pull-left" src="/images/demo/people/300x300/3-min.jpg" width={40} height={40} alt />
-                  <h4 className="size-14 nomargin noborder nopadding bold"><a href="#">{displayName}</a></h4>
-                  <span className="size-12 text-muted">Lorem ipsum dolor sit amet.</span>
-                </div>{/* /squared item */}
-                <div className="clearfix margin-bottom-10">{/* rounded item */}
-                  <img className="thumbnail pull-left rounded" src="/images/demo/people/300x300/4-min.jpg" width={40} height={40} alt />
-                  <h4 className="size-14 nomargin noborder nopadding bold"><a href="#">Suzana Doe</a></h4>
-                  <span className="size-12 text-muted">Lorem ipsum dolor sit amet.</span>
-                </div>{/* /rounded item */}
-                <div className="clearfix margin-bottom-10">{/* squared item */}
-                  <img className="thumbnail pull-left" src="/images/demo/people/300x300/5-min.jpg" width={40} height={40} alt />
-                  <h4 className="size-14 nomargin noborder nopadding bold"><a href="#">Jolie Doe</a></h4>
-                  <span className="size-12 text-muted">Lorem ipsum dolor sit amet.</span>
-                </div>{/* /squared item */}
+              <div className="" data-always-visible="true" data-size="5px" data-position="right" data-opacity="0.4" disable-body-scroll="true">
+                <p dangerouslySetInnerHTML={{ __html: recentWorks }} />
               </div>
             </div>
-            <div className="box-footer">
-              {/* INLINE SEARCH */}
-              <div className="inline-search clearfix">
-                <form action="#" method="get" className="widget_search nomargin">
-                  <input type="search" placeholder="Search Friend..." name="s" className="serch-input" />
-                  <button type="submit">
-                    <i className="fa fa-search" />
-                  </button>
-                  <div className="clear" />
-                </form>
-              </div>
-              {/* /INLINE SEARCH */}
-            </div>
+
           </div>
           {/* /FRIENDS */}
         </div>

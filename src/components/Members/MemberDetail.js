@@ -13,8 +13,8 @@ class MembersDetail extends Component {
   }
 
   render() {
-    const { address, displayName, image, intro, links,
-            bio, since, statement, twitter } = this.props;
+    const { address, bio, displayName, photo, intro, links,
+            since, recentWorks, statement, twitter } = this.props;
 
     return (
       <div>
@@ -42,7 +42,13 @@ class MembersDetail extends Component {
           <div className="container">
             {/* LEFT */}
             <div className="col-lg-3 col-md-3 col-sm-4">
-              <InfoBox address={address} image={image} displayName={displayName} since={since} intro={this.createMarkup(intro)}/>
+              <InfoBox
+                address={address}
+                displayName={displayName}
+                image={photo}
+                intro={intro}
+                since={since}
+              />
 
               {/* SIDE NAV */}
               <ul className="side-nav list-group margin-bottom-60" id="sidebar-nav">
@@ -75,12 +81,13 @@ class MembersDetail extends Component {
                 {/* /info */}
                 <div className="text-muted">
                   <h2 className="size-18 text-muted margin-bottom-6"><b>About</b> {displayName}</h2>
-                  <p dangerouslySetInnerHTML={this.createMarkup(statement)} />
+                  <p dangerouslySetInnerHTML={{ __html: statement }} />
                   <ul className="list-unstyled nomargin">
                     {
-                      links.map((link) => {
+                      links &&
+                      links.map((link, index) => {
                         return (
-                          <li className="margin-bottom-10">
+                          <li key={index} className="margin-bottom-10">
                             <i className="fa fa-globe width-20 hidden-xs hidden-sm" />
                             <a href={link.url}>
                               {link.title}
@@ -115,7 +122,11 @@ class MembersDetail extends Component {
                   </div>
                 </div>
               </div>
-              <Right displayName={displayName} twitter={twitter} />
+              <Right
+                displayName={displayName}
+                twitter={twitter}
+                recentWorks={recentWorks}
+              />
             </div>
           </div>
         </section>
@@ -132,13 +143,14 @@ MembersDetail.propTypes = {
   address: PropTypes.object,
   bio: PropTypes.string,
   displayName: PropTypes.string.isRequired,
-  image: PropTypes.shape({
+  photo: PropTypes.shape({
     uri: PropTypes.string.isRequired,
     height: PropTypes.number,
     width: PropTypes.number,
   }),
   intro: PropTypes.string,
   links: PropTypes.array,
+  recentWorks: PropTypes.string,
   since: PropTypes.string,
   slug: PropTypes.string.isRequired,
   statement: PropTypes.string,

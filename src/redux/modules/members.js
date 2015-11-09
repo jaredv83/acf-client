@@ -42,6 +42,6 @@ export function isLoaded(globalState) {
 export function load() {
   return {
     types: [LOAD, LOAD_SUCCESS, LOAD_FAIL],
-    promise: (client) => client.get('http://acf.cape.io/api/memberList.json'),
+    promise: (client) => client.get('http://v5.cape.io/api/acf/profiles'),
   };
 }
