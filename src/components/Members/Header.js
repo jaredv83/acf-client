@@ -1,17 +1,6 @@
 import React from 'react';
-import { IndexLink, Link } from 'react-router';
-
-const NavbarLink = ({to, className, component, children}) => {
-  const Comp = component || Link;
-
-  return (
-    <Comp to={to} className={className} activeStyle={{
-      color: '#A94545',
-    }}>
-      {children}
-    </Comp>
-  );
-};
+import { IndexLink } from 'react-router';
+import NavbarLink from './NavbarLink';
 
 function Header({ navLinks }) {
   return (
