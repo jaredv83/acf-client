@@ -50,19 +50,6 @@ class MembersDetail extends Component {
                 since={since}
               />
 
-              {/* SIDE NAV */}
-              <ul className="side-nav list-group margin-bottom-60" id="sidebar-nav">
-                <li className="list-group-item active">
-                  <a href="#"><i className="fa fa-eye" /> PROFILE</a></li>
-                <li className="list-group-item">
-                  <a href="#"><i className="fa fa-tasks" /> COMPOSITIONS</a></li>
-                <li className="list-group-item">
-                  <a href="#"><i className="fa fa-comments-o" /> COMMENTS</a></li>
-                <li className="list-group-item">
-                  <a href="#"><i className="fa fa-history" /> HISTORY</a></li>
-              </ul>
-              {/* /SIDE NAV */}
-
               <div className="box-light margin-bottom-30">{/* .box-light OR .box-light */}
                 <div className="row margin-bottom-20">
                   <div className="col-md-4 col-sm-4 col-xs-4 text-center bold">
