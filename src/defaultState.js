@@ -1,10 +1,11 @@
 function createNavLink(id, args = {}) {
-  const {text, to, authenticated, rest} = args;
+  const {text, to, href, authenticated, rest} = args;
   return {
     authenticated,
     id,
     text: text || id.charAt(0).toUpperCase() + id.slice(1),
     to: to || '/' + id,
+    href,
     ...rest,
   };
 }
@@ -22,6 +23,10 @@ export default {
     navLinks: [
       createNavLink('about', {text: 'About Us'}),
       createNavLink('members'),
+      createNavLink('acf40', {
+        text: 'ACF 40',
+        href: 'https://composersforum.org/acf40',
+      }),
     ],
   },
 };
