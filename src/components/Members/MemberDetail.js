@@ -13,8 +13,8 @@ class MembersDetail extends Component {
   }
 
   render() {
-    const { address, bio, displayName, photo, intro, links,
-            since, recentWorks, statement, twitter } = this.props;
+    const { address, bio, displayName, photo, intro, links, profileTypes,
+            since, recentWorks, reviews, statement, twitter } = this.props;
 
     return (
       <div>
@@ -62,25 +62,20 @@ class MembersDetail extends Component {
                   <a href="#"><i className="fa fa-history" /> HISTORY</a></li>
               </ul>
               {/* /SIDE NAV */}
-              {/* info */}
+
               <div className="box-light margin-bottom-30">{/* .box-light OR .box-light */}
                 <div className="row margin-bottom-20">
                   <div className="col-md-4 col-sm-4 col-xs-4 text-center bold">
-                    <h2 className="size-30 margin-top-10 margin-bottom-0 font-raleway">12</h2>
-                    <h3 className="size-11 margin-top-0 margin-bottom-10 text-info">RECORDINGS</h3>
-                  </div>
-                  <div className="col-md-4 col-sm-4 col-xs-4 text-center bold">
-                    <h2 className="size-30 margin-top-10 margin-bottom-0 font-raleway">34</h2>
-                    <h3 className="size-11 margin-top-0 margin-bottom-10 text-info">COMPOSITIONS</h3>
-                  </div>
-                  <div className="col-md-4 col-sm-4 col-xs-4 text-center bold">
-                    <h2 className="size-30 margin-top-10 margin-bottom-0 font-raleway">32</h2>
-                    <h3 className="size-11 margin-top-0 margin-bottom-10 text-info">OTHER</h3>
+
                   </div>
                 </div>
-                {/* /info */}
                 <div className="text-muted">
-                  <h2 className="size-18 text-muted margin-bottom-6"><b>About</b> {displayName}</h2>
+                  <h2 className="size-18 text-muted margin-bottom-6">
+                    <b>About</b> { displayName }
+                  </h2>
+                  <h3 className="size-11 margin-top-0 margin-bottom-10 text-info">
+                    { profileTypes }
+                  </h3>
                   <p dangerouslySetInnerHTML={{ __html: statement }} />
                   <ul className="list-unstyled nomargin">
                     {
@@ -126,6 +121,7 @@ class MembersDetail extends Component {
                 displayName={displayName}
                 twitter={twitter}
                 recentWorks={recentWorks}
+                reviews={reviews}
               />
             </div>
           </div>
@@ -150,7 +146,9 @@ MembersDetail.propTypes = {
   }),
   intro: PropTypes.string,
   links: PropTypes.array,
+  profileTypes: PropTypes.array,
   recentWorks: PropTypes.string,
+  reviews: PropTypes.string,
   since: PropTypes.string,
   slug: PropTypes.string.isRequired,
   statement: PropTypes.string,

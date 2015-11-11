@@ -4,17 +4,21 @@ import { Link } from 'react-router';
 class MembersPreview extends Component {
 
   render() {
-    const {displayName, image, intro, slug} = this.props;
+    const {displayName, searchImg, intro, slug} = this.props;
 
     // TODO: remove inline styles and implement a system
     return (
       <div style={{
         height: '200px',
       }}>
-        <img src={image.uri} style={{
-          maxHeight: '75px',
-          float: 'left',
-        }} />
+        {
+          searchImg &&
+          <img src={searchImg.url} style={{
+            maxHeight: '75px',
+            float: 'left',
+          }} />
+        }
+
         <div style={{
           float: 'right',
           width: 'calc(100% - 150px)',
@@ -31,8 +35,8 @@ class MembersPreview extends Component {
 
 MembersPreview.propTypes = {
   displayName: PropTypes.string.isRequired,
-  image: PropTypes.shape({
-    uri: PropTypes.string.isRequired,
+  searchImg: PropTypes.shape({
+    url: PropTypes.string.isRequired,
     height: PropTypes.number,
     width: PropTypes.number,
   }),

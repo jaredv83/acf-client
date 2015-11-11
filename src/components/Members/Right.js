@@ -1,39 +1,16 @@
 import React, { PropTypes } from 'react';
-import moment from 'moment';
+import Twitter from './Twitter';
 
-function Right({ displayName, twitter, recentWorks }) {
+function Right({ displayName, twitter, recentWorks, reviews }) {
   return (
     <div>
       <div className="box-light">{/* .box-light OR .box-dark */}
         <div className="row">
           {/* TWEETS */}
-          <div className="col-md-6 col-sm-6">
-            <div className="box-inner">
-              <h3>
-                <a className="pull-right size-11 text-warning" href="#">VIEW ALL</a>
-                RECENT TWEETS
-              </h3>
-              <div>
-                { twitter &&
-                  twitter.map((tweet) => {
-                    const timeAgo = moment(tweet.created_at).fromNow();
-                    return (
-                      <div className="clearfix margin-bottom-20">
-                        <img className="thumbnail pull-left" src={tweet.user.profile_image_url} width={60} height={60} alt />
-                        <span className="size-13 text-muted">
-                          {tweet.text}
-                          &nbsp;
-                          <span className="text-success size-11">{timeAgo}</span>
-                        </span>
-                      </div>
-                    );
-                  })
-                }
-              </div>
-            </div>
-          </div>
+          <Twitter twitter={twitter} />
           {/* /TWEETS */}
-          {/* FRIENDS */}
+
+        { recentWorks &&
           <div className="col-md-6 col-sm-6">
             <div className="box-inner">
               <h3>
@@ -43,9 +20,20 @@ function Right({ displayName, twitter, recentWorks }) {
                 <p dangerouslySetInnerHTML={{ __html: recentWorks }} />
               </div>
             </div>
-
           </div>
-          {/* /FRIENDS */}
+        }
+        { reviews &&
+          <div className="col-md-6 col-sm-6">
+            <div className="box-inner">
+              <h3>
+                <span>REVIEWS</span>
+              </h3>
+              <div className="" data-always-visible="true" data-size="5px" data-position="right" data-opacity="0.4" disable-body-scroll="true">
+                <p dangerouslySetInnerHTML={{ __html: reviews }} />
+              </div>
+            </div>
+          </div>
+        }
         </div>
         <div className="row margin-top-30">
           {/* DISCUSSIONS */}
