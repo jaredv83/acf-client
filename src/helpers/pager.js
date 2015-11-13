@@ -3,7 +3,8 @@ export function getPagerInfo(items, opts) {
     page: 1,
     perPage: 48,
   };
-  const { page, perPage } = {...defaultOpts, ...opts};
+  const page = opts.page || defaultOpts.page;
+  const perPage = opts.perPage || defaultOpts.perPage;
   const totalItems = items.length;
   const maxPage = Math.ceil(totalItems / perPage);
   const pageIndex = page < maxPage ? page : maxPage;
