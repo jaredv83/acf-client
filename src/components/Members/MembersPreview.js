@@ -6,27 +6,32 @@ class MembersPreview extends Component {
   render() {
     const {displayName, searchImg, intro, slug} = this.props;
 
-    // TODO: remove inline styles and implement a system
     return (
-      <div style={{
-        height: '200px',
-      }}>
-        {
-          searchImg &&
-          <img src={searchImg.url} style={{
-            maxHeight: '75px',
-            float: 'left',
-          }} />
-        }
-
-        <div style={{
-          float: 'right',
-          width: 'calc(100% - 150px)',
+      <div className="col-xs-12 col-sm-4 col-md-3">
+        <div className="thumbnail" style={{
+          height: '300px',
         }}>
-          <p>
-            <Link to={ `/members/${slug}` }>{displayName}</Link>
-          </p>
-          <p>{intro}</p>
+          <div style={{
+            maxHeight: '95%',
+            overflowY: 'auto',
+          }}>
+            {
+              searchImg &&
+              <img src={searchImg.url} style={{
+                maxHeight: '125px',
+                margin: 'auto',
+                display: 'block',
+              }}/>
+            }
+            <div className="caption">
+              <h4 className="nomargin" style={{
+                textAlign: 'center',
+              }}>
+                <Link to={ `/members/${slug}` }>{displayName}</Link>
+              </h4>
+              <p dangerouslySetInnerHTML={{ __html: intro }} />
+            </div>
+          </div>
         </div>
       </div>
     );

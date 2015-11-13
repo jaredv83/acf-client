@@ -11,6 +11,7 @@ class Members extends Component {
       <div className="container">
         <h1>Members</h1>
         <DocumentMeta title="CAPE: Members" />
+        <div className="row">
         {
           members.map((member) => {
             return (
@@ -18,6 +19,7 @@ class Members extends Component {
             );
           })
         }
+        </div>
       </div>
     );
   }
