@@ -22,7 +22,11 @@ function InfoBox({ address, image, intro, displayName, since }) {
 }
 InfoBox.propTypes = {
   address: PropTypes.object,
-  image: PropTypes.object,
+  image: PropTypes.shape({
+    url: PropTypes.string.isRequired,
+    height: PropTypes.number,
+    width: PropTypes.number,
+  }),
   intro: PropTypes.string,
   displayName: PropTypes.string,
   since: PropTypes.string,

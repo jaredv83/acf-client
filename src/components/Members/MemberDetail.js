@@ -60,9 +60,14 @@ class MembersDetail extends Component {
                   <h2 className="size-18 text-muted margin-bottom-6">
                     <b>About</b> { displayName }
                   </h2>
-                  <h3 className="size-11 margin-top-0 margin-bottom-10 text-info">
-                    { profileTypes }
-                  </h3>
+                  {
+                    profileTypes &&
+                    <h3 className="size-11 margin-top-0 margin-bottom-10 text-info">
+                      { profileTypes.map( ({label}) =>
+                        <div>{ label }</div>
+                      )}
+                    </h3>
+                  }
                   <p dangerouslySetInnerHTML={{ __html: statement }} />
                   <ul className="list-unstyled nomargin">
                     {
