@@ -1,6 +1,7 @@
 import React from 'react';
 import { IndexLink } from 'react-router';
 import NavbarLink from './NavbarLink';
+import SearchBox from './SearchBox';
 
 function Header({ navLinks }) {
   return (
@@ -13,23 +14,7 @@ function Header({ navLinks }) {
           </button>
           {/* BUTTONS */}
           <ul className="pull-right nav nav-pills nav-second-main">
-            {/* SEARCH */}
-            <li className="search">
-              <a href="#">
-                <i className="fa fa-search" />
-              </a>
-              <div className="search-box">
-                <form action="page-search-result-1.html" method="get">
-                  <div className="input-group">
-                    <input type="text" name="src" placeholder="Search" className="form-control" />
-                    <span className="input-group-btn">
-                      <button className="btn btn-primary" type="submit">Search</button>
-                    </span>
-                  </div>
-                </form>
-              </div>
-            </li>
-            {/* /SEARCH */}
+            <SearchBox />
           </ul>
           {/* /BUTTONS */}
           {/* Logo */}

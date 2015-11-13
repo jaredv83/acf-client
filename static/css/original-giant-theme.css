@@ -14425,7 +14425,7 @@ section.dark.page-header ul.page-options a {
 		display:inline-block;
 	}
 	#header li.search .search-box {
-		display:none;
+		display:inline-block;
 		right: 0;
 		left:auto;
 		top: 100%;
