@@ -16,7 +16,7 @@ function InfoBox({ address, image, intro, displayName, since }) {
           {address.city}, {address.state}
         </h3>
       }
-      <p dangerouslySetInnerHTML={{ __html: intro }} />
+      { intro && <p> { intro } </p> }
     </div>
   );
 }
