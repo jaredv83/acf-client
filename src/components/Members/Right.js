@@ -1,7 +1,8 @@
 import React, { PropTypes } from 'react';
-import Twitter from './Twitter';
+// import Twitter from './Twitter';
 
-function Right({ displayName, twitter, recentWorks, reviews }) {
+// Add twitter, displayName when ready
+function Right({ recentWorks, reviews }) {
   return (
     <div>
       <div className="box-light">{/* .box-light OR .box-dark */}
