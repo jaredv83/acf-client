@@ -32,6 +32,7 @@ export default class Html extends Component {
           <link rel="shortcut icon" href="/favicon.ico" />
           {/* TODO: isolate necessary styles and don't include this monster*/}
           <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
           <link href="/css/react-select.css" rel="stylesheet" type="text/css" />
           <link href="/css/react-widgets.css" rel="stylesheet" type="text/css" />
           {/* styles (will be present only in production with webpack extract text plugin) */}
