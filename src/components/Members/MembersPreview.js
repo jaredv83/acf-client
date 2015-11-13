@@ -10,6 +10,10 @@ class MembersPreview extends Component {
       <div className="col-xs-12 col-sm-4 col-md-3">
         <div className="thumbnail" style={{
           height: '300px',
+          background: 'rgba(243,243,243,1)',
+          border: '0',
+          borderRadius: '0',
+          padding: '20px 10px',
         }}>
           <div style={{
             maxHeight: '95%',
