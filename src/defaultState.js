@@ -43,10 +43,6 @@ export default {
         text: 'Programs',
         href: 'https://composersforum.org/programs',
       }),
-      createNavLink('about', {
-        text: 'About Us',
-        href: 'https://composersforum.org/about',
-      }),
     ],
   },
 };
