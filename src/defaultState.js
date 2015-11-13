@@ -27,6 +27,26 @@ export default {
         text: 'ACF 40',
         href: 'https://composersforum.org/acf40',
       }),
+      createNavLink('discover', {
+        text: 'Discover',
+        href: 'https://composersforum.org/discover',
+      }),
+      createNavLink('get-involved', {
+        text: 'Get Involved',
+        href: 'https://composersforum.org/get-involved',
+      }),
+      createNavLink('opportunities-upcoming', {
+        text: 'Opportunities',
+        href: 'https://composersforum.org/opportunities-upcoming',
+      }),
+      createNavLink('programs', {
+        text: 'Programs',
+        href: 'https://composersforum.org/programs',
+      }),
+      createNavLink('about', {
+        text: 'About Us',
+        href: 'https://composersforum.org/about',
+      }),
     ],
   },
 };

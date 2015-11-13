@@ -1,22 +1,25 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-function NavbarLink({to, href, className, component, children}) {
+function NavbarLink({ children, className, component, href, to }) {
   const Comp = component || Link;
 
-  return (
-    <span>
-      { href ?
-        <a href={href}>Yo</a>
-        :
-        <Comp to={to} className={className} activeStyle={{
-          color: '#A94545',
-        }}>
-          {children}
-        </Comp>
-      }
-    </span>
+  let Linkelement = (
+    <Comp to={to} className={className} activeStyle={{
+      color: '#A94545',
+    }}>
+      {children}
+    </Comp>
   );
+  if (href) {
+    Linkelement = (
+      <a href={href}>
+        {children}
+      </a>
+    );
+  }
+
+  return Linkelement;
 }
 
 
