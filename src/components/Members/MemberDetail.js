@@ -63,8 +63,8 @@ class MembersDetail extends Component {
                   {
                     profileTypes &&
                     <h3 className="size-11 margin-top-0 margin-bottom-10 text-info">
-                      { profileTypes.map( ({label}) =>
-                        <div>{ label }</div>
+                      { profileTypes.map( ({label, value}) =>
+                        <div key={value}>{ label }</div>
                       )}
                     </h3>
                   }
