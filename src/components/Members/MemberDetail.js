@@ -127,7 +127,7 @@ MembersDetail.propTypes = {
   bio: PropTypes.string,
   displayName: PropTypes.string.isRequired,
   photo: PropTypes.shape({
-    uri: PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired,
     height: PropTypes.number,
     width: PropTypes.number,
   }),
