@@ -23,6 +23,7 @@ class ApiClient_ {
               }
             }
             if (options && options.data) {
+              console.log(options);
               request.send(options.data);
             }
             request.end((err, res) => {
