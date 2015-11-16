@@ -21,5 +21,3 @@ export default function connectData(fetchData, fetchDataDeferred) {
     return hoistStatics(ConnectData, WrappedComponent);
   };
 }
-
-console.log('connectData');
