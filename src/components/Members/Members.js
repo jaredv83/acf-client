@@ -67,6 +67,7 @@ Members.propTypes = {
   hasLess: React.PropTypes.bool,
   hasMore: React.PropTypes.bool,
   members: React.PropTypes.array,
+  pageIndex: React.PropTypes.number,
 };
 
 export default Members;
