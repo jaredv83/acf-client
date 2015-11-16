@@ -36,7 +36,9 @@ export default function reducer(state = defaultState, action) {
 }
 
 export function isLoaded(globalState) {
-  return globalState.members && globalState.members.loaded;
+  const result = globalState.members && globalState.members.loaded;
+  console.log('isMembersLoaded', result);
+  return result;
 }
 
 export function load() {
