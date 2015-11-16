@@ -21,11 +21,16 @@ class MembersPreview extends Component {
           }}>
             {
               searchImg &&
-              <img src={searchImg.url} style={{
-                maxHeight: '125px',
-                margin: 'auto',
-                display: 'block',
-              }}/>
+              <Link to={ `/members/${slug}` }>
+                <img
+                  src={searchImg.url}
+                  style={{
+                    maxHeight: '125px',
+                    margin: 'auto',
+                    display: 'block',
+                  }}
+                />
+              </Link>
             }
             <div className="caption">
               <h4 className="nomargin" style={{
