@@ -3,6 +3,13 @@ import {Link} from 'react-router';
 import DocumentMeta from 'react-document-meta';
 import classnames from 'classnames';
 import MembersPreview from './MembersPreview';
+const Masonry = require('react-masonry-component')(React);
+
+const masonryOptions = {
+  containerStyle: {
+    visibility: 'visible',
+  },
+};
 
 class Members extends Component {
 
@@ -13,15 +20,20 @@ class Members extends Component {
       <div className="container">
         <h1>Members</h1>
         <DocumentMeta title="CAPE: Members" />
-        <div className="row">
-        {
-          members.map((member) => {
-            return (
-              <MembersPreview key={member.slug} {...member} />
-            );
-          })
-        }
-        </div>
+        <Masonry
+            className={'row masonry'} // default ''
+            elementType={'div'} // default 'div'
+            options={masonryOptions} // default {}
+            disableImagesLoaded={false} // default false
+        >
+          {
+            members.map((member) => {
+              return (
+                <MembersPreview key={member.slug} {...member} />
+              );
+            })
+          }
+        </Masonry>
         <nav>
           <ul className="pager">
             <li className={classnames({

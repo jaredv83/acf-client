@@ -7,18 +7,14 @@ class MembersPreview extends Component {
     const {displayName, searchImg, intro, slug} = this.props;
 
     return (
-      <div className="col-xs-12 col-sm-4 col-md-3">
+      <div className="col-xs-12 col-sm-4 col-md-3 animated fadeIn masonry-item">
         <div className="thumbnail" style={{
-          height: '300px',
           background: 'rgba(243,243,243,1)',
           border: '0',
           borderRadius: '0',
           padding: '20px 10px',
         }}>
-          <div style={{
-            maxHeight: '95%',
-            overflowY: 'auto',
-          }}>
+          <div>
             {
               searchImg &&
               <Link to={ `/members/${slug}` }>
