@@ -1,7 +1,5 @@
 import React, { Component, PropTypes } from 'react';
 import DocumentMeta from 'react-document-meta';
-import { isLoaded as isMembersLoaded, load as loadMembers } from 'redux/modules/members';
-import { isLoaded as isTwitterLoaded, load as loadTwitter } from 'redux/modules/twitter';
 import Header from '../Members/Header';
 
 function makeMeta({title, description, image}) {
@@ -60,18 +58,6 @@ export default class App extends Component {
       // logout
       this.props.pushState(null, '/');
     }
-  }
-
-  static fetchData(getState, dispatch) {
-    const promises = [];
-    const state = getState();
-    if (!isMembersLoaded(state)) {
-      promises.push(dispatch(loadMembers()));
-    }
-    if (!isTwitterLoaded(state)) {
-      promises.push(dispatch(loadTwitter()));
-    }
-    return Promise.all(promises);
   }
 
   // Is that really the best way to decide what menu items to display?
