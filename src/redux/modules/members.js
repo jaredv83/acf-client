@@ -42,6 +42,7 @@ export function isLoaded(globalState) {
 }
 
 export function load() {
+  console.log('load acf members');
   return {
     types: [LOAD, LOAD_SUCCESS, LOAD_FAIL],
     promise: (client) => client.get('http://v5.cape.io/api/acf/profiles'),
