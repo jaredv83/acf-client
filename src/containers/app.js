@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import Component from '../components/App/App';
 import { pushState } from 'redux-router';
-import connectData from 'helpers/connectData';
+import connectData from '../helpers/connectData';
 import { isLoaded as isMembersLoaded, load as loadMembers } from 'redux/modules/members';
 import { isLoaded as isTwitterLoaded, load as loadTwitter } from 'redux/modules/twitter';
 
