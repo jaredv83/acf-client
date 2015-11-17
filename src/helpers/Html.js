@@ -26,7 +26,6 @@ export default class Html extends Component {
     return (
       <html lang="en-us">
         <head>
-          <meta charSet="utf-8"/>
           {DocumentMeta.renderAsReact()}
 
           <link rel="shortcut icon" href="/favicon.ico" />
@@ -35,17 +34,17 @@ export default class Html extends Component {
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
           <link href="/css/react-select.css" rel="stylesheet" type="text/css" />
           <link href="/css/react-widgets.css" rel="stylesheet" type="text/css" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
           {/* styles (will be present only in production with webpack extract text plugin) */}
           {Object.keys(assets.styles).map((style, key) =>
             <link href={assets.styles[style]} key={key} media="screen, projection"
-                  rel="stylesheet" type="text/css"/>
+                  rel="stylesheet" type="text/css" charSet="UTF-8"/>
           )}
-          <link href="/css/original-giant-theme.css" rel="stylesheet" type="text/css" />
         </head>
         <body>
           <div id="content" dangerouslySetInnerHTML={{__html: content}}/>
-          <script dangerouslySetInnerHTML={{__html: `window.__data=${serialize(store.getState())};`}} />
-          <script src={assets.javascript.main}/>
+          <script dangerouslySetInnerHTML={{__html: `window.__data=${serialize(store.getState())};`}} charSet="UTF-8"/>
+          <script src={assets.javascript.main} charSet="UTF-8"/>
         </body>
       </html>
     );
