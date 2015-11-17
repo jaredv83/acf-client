@@ -11,6 +11,7 @@ import ApiClient from './helpers/ApiClient';
 import Html from './helpers/Html';
 import PrettyError from 'pretty-error';
 import http from 'http';
+// import SocketIo from 'socket.io';
 
 import {ReduxRouter} from 'redux-router';
 import createHistory from 'history/lib/createMemoryHistory';
@@ -26,8 +27,8 @@ const app = new Express();
 const server = new http.Server(app);
 // Proxy our API server.
 // const proxy = httpProxy.createProxyServer({
-//   target: 'http://localhost:' + config.apiPort,
-//   ws: true, // activate websocket support.
+//   target: 'http://' + config.apiHost + ':' + config.apiPort,
+//   ws: true
 // });
 
 app.use(compression());
@@ -114,11 +115,17 @@ app.use((req, res) => {
 });
 
 if (config.port) {
+  // if (config.isProduction) {
+  //   const io = new SocketIo(server);
+  //   io.path('/api/ws');
+  // }
+
   server.listen(config.port, (err) => {
     if (err) {
       console.error(err);
     }
-    console.info('==> 💻  Open http://localhost:%s in a browser to view the app.', config.port);
+    // console.info('----\n==> ✅  %s is running, talking to API server on %s.', config.app.title, config.apiPort);
+    console.info('==> 💻  Open http://%s:%s in a browser to view the app.', config.host, config.port);
   });
 } else {
   console.error('==>     ERROR: No PORT environment variable has been specified');
