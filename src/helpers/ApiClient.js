@@ -4,11 +4,14 @@ import config from '../config';
 const methods = ['get', 'post', 'put', 'patch', 'del'];
 
 function formatUrl(path) {
-  const adjustedPath = config.apiPrefix + path[0] !== '/' ? '/' + path : path;
-
+  if (path.startsWith('http')) {
+    return path;
+  }
+  let adjustedPath = path[0] !== '/' ? '/' + path : path;
+  adjustedPath = '/api' + adjustedPath;
   if (__SERVER__) {
     // Prepend host and port of the API server to the path.
-    return 'http://' + config.apiHost + ':' + config.apiPort + adjustedPath;
+    adjustedPath = 'http://' + config.apiHost + ':' + config.apiPort + adjustedPath;
   }
   // Prepend `/api` to relative URL, to proxy to API server.
   return adjustedPath;
@@ -24,7 +27,9 @@ class _ApiClient {
   constructor(req) {
     methods.forEach((method) =>
       this[method] = (path, { params, data } = {}) => new Promise((resolve, reject) => {
-        const request = superagent[method](formatUrl(path));
+        const url = formatUrl(path);
+        console.log(url);
+        const request = superagent[method](url);
 
         if (params) {
           request.query(params);
