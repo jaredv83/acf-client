@@ -34,6 +34,7 @@ export default class Html extends Component {
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
           <link href="/css/react-select.css" rel="stylesheet" type="text/css" />
           <link href="/css/react-widgets.css" rel="stylesheet" type="text/css" />
+          <link href="/css/original-giant-theme.css" rel="stylesheet" type="text/css" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           {/* styles (will be present only in production with webpack extract text plugin) */}
           {Object.keys(assets.styles).map((style, key) =>
