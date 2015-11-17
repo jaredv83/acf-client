@@ -7,6 +7,7 @@ import { isLoaded as isTwitterLoaded, load as loadTwitter } from 'redux/modules/
 
 function fetchData(getState, dispatch) {
   const promises = [];
+  console.log('fetchData');
   const state = getState();
   if (!isMembersLoaded(state)) {
     promises.push(dispatch(loadMembers()));
