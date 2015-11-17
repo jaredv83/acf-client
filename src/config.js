@@ -31,8 +31,8 @@ function createMeta(title) {
 module.exports = Object.assign({
   host: process.env.HOST || 'localhost',
   port: process.env.PORT,
-  apiHost: process.env.APIHOST || 'localhost',
-  apiPort: process.env.APIPORT,
+  apiHost: process.env.APIHOST || 'v5.cape.io',
+  apiPort: process.env.APIPORT || 3003,
   app: {
     title: 'American Composers Forum',
     description: 'All the modern best practices in one example.',
