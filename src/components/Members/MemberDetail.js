@@ -1,21 +1,24 @@
-import React, { Component, PropTypes } from 'react';
-import {Link} from 'react-router';
-import InfoBox from './InfoBox';
-import Footer from './Footer';
-import Right from './Right';
+import React, { Component, PropTypes } from 'react'
+import { Link } from 'react-router'
+import InfoBox from './InfoBox'
+import Footer from './Footer'
+import Right from './Right'
+import Loading from '../Loading'
 
 class MembersDetail extends Component {
 
   createMarkup(html) {
     return {
       __html: html,
-    };
+    }
   }
 
   render() {
     const { address, bio, displayName, photo, intro, links, profileTypes,
-            since, recentWorks, reviews, statement, twitter } = this.props;
-
+            since, recentWorks, reviews, statement, twitter } = this.props
+    if (!displayName) {
+      return <Loading message={`Loading member details...`} />
+    }
     return (
       <div>
         <section className="page-header page-header-xs">
@@ -63,7 +66,7 @@ class MembersDetail extends Component {
                   {
                     profileTypes &&
                     <h3 className="size-11 margin-top-0 margin-bottom-10 text-info">
-                      { profileTypes.map( ({label, value}) =>
+                      { profileTypes.map( ({ label, value }) =>
                         <div key={value}>{ label }</div>
                       )}
                     </h3>
@@ -80,7 +83,7 @@ class MembersDetail extends Component {
                               {link.title}
                             </a>
                           </li>
-                        );
+                        )
                       })
                     }
                     <li className="margin-bottom-10">
@@ -123,14 +126,14 @@ class MembersDetail extends Component {
         <Footer />
         {/* /FOOTER */}
       </div>
-    );
+    )
   }
 }
 
 MembersDetail.propTypes = {
   address: PropTypes.object,
   bio: PropTypes.string,
-  displayName: PropTypes.string.isRequired,
+  displayName: PropTypes.string,
   photo: PropTypes.shape({
     url: PropTypes.string.isRequired,
     height: PropTypes.number,
@@ -146,6 +149,6 @@ MembersDetail.propTypes = {
   statement: PropTypes.string,
   twitter: PropTypes.array,
   usState: PropTypes.string,
-};
+}
 
-export default MembersDetail;
+export default MembersDetail

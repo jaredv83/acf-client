@@ -10,6 +10,7 @@ function mapStateToProps(state, ownProps) {
 
   const memberData = member ? member[id] : {}
   return {
+    slug: id,
     ...memberData,
     twitter: twitter && twitter.data,
   }
