@@ -19,12 +19,14 @@ class MembersPreview extends Component {
               searchImg &&
               <Link to={ `/members/${slug}` }>
                 <img
+                  alt={displayName}
                   src={`${searchImg.url}?w=200`}
                   style={{
                     maxHeight: '125px',
                     margin: 'auto',
                     display: 'block',
                   }}
+                  title={displayName}
                 />
               </Link>
             }
