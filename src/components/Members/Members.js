@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
 import classnames from 'classnames'
-import MembersPreview from './MembersPreview'
 import masonry from 'react-masonry-component'
 const Masonry = masonry(React)
+import MembersPreview from './MembersPreview'
+import Loading from '../Loading'
 
 const masonryOptions = {
   containerStyle: {
@@ -14,8 +15,14 @@ const masonryOptions = {
 class Members extends Component {
 
   render() {
-    const { members, hasLess, hasMore, pageIndex } = this.props
-
+    const { members, hasLess, hasMore, pageIndex, totalItems } = this.props
+    if (totalItems === 0) {
+      return (
+        <div className="container">
+          <Loading message={`Loading members...`} />
+        </div>
+      )
+    }
     return (
       <div className="container">
         <h1>Members</h1>
@@ -79,6 +86,7 @@ Members.propTypes = {
   hasMore: React.PropTypes.bool,
   members: React.PropTypes.array,
   pageIndex: React.PropTypes.number,
+  totalItems: React.PropTypes.number,
 }
 
 export default Members

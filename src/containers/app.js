@@ -1,13 +1,23 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { pushPath } from 'redux-simple-router'
-import { resetErrorMessage } from '../redux/actions'
+import { loadMembers, resetErrorMessage } from '../redux/actions'
 import Header from '../components/Header/Header'
+
+// This is called from within the container component class.
+function loadData(props) {
+  // Load info about the user session.
+  props.loadMembers()
+}
 
 class App extends Component {
   constructor(props) {
     super(props)
     this.handleDismissClick = this.handleDismissClick.bind(this)
+  }
+
+  componentWillMount() {
+    loadData(this.props)
   }
 
   handleDismissClick(err) {
@@ -50,6 +60,7 @@ App.propTypes = {
   children: PropTypes.node,
   // Injected by React Redux
   errorMessage: PropTypes.string,
+  loadMembers: PropTypes.func.isRequired,
   navLinks: PropTypes.array.isRequired,
   resetErrorMessage: PropTypes.func.isRequired,
   title: PropTypes.string.isRequired,
@@ -70,6 +81,7 @@ function mapStateToProps(state) {
 }
 
 export default connect(mapStateToProps, {
+  loadMembers,
   resetErrorMessage,
   pushPath,
 })(App)

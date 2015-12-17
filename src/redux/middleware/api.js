@@ -8,23 +8,13 @@ import { callApi } from '../../utils/callApi'
 
 // Read more about Normalizr: https://github.com/gaearon/normalizr
 
-const userSchema = new Schema('users', {
-  idAttribute: 'value',
+const memberSchema = new Schema('member', {
+  idAttribute: 'slug',
 })
-const sessionSchema = new Schema('session', {
-  idAttribute: () => 'me',
-})
-const formSchema = new Schema('forms')
-const urlSchema = new Schema('url')
 
 // Schemas for Github API responses.
 export const Schemas = {
-  URL: urlSchema,
-  USER: userSchema,
-  USER_ARRAY: arrayOf(userSchema),
-  FORM: formSchema,
-  FORM_ARRAY: arrayOf(formSchema),
-  SESSION: sessionSchema,
+  MEMBER_ARRAY: arrayOf(memberSchema),
 }
 
 // Action key that carries API call info interpreted by this Redux middleware.
