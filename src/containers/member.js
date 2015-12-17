@@ -1,15 +1,15 @@
-import { connect } from 'react-redux';
-import Component from 'components/Members/MemberDetail';
-import find from 'lodash.find';
+import { connect } from 'react-redux'
+import Component from '../components/Members/MemberDetail'
+import find from 'lodash/collection/find'
 
 function mapStateToProps({ members: { data }, router: { params }, twitter }) {
-  const member = find(data, {slug: params.id});
+  const member = find(data, { slug: params.id })
   return {
     ...member,
     twitter: twitter && twitter.data,
-  };
+  }
 }
 
-// const mapDispatchToProps = {};
+// const mapDispatchToProps = {}
 
-export default connect(mapStateToProps)(Component);
+export default connect(mapStateToProps)(Component)
