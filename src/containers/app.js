@@ -46,7 +46,7 @@ class App extends Component {
   render() {
     const { children, navLinks, title } = this.props
     return (
-      <div className="container" id="wrapper">
+      <div id="wrapper">
         <Header navLinks={navLinks} styles={{}} title={title} />
         { this.renderErrorMessage() }
         { children }
