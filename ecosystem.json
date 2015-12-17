@@ -1,0 +1,26 @@
+{
+  "apps" : [
+    {
+      "name"      : "ACF",
+      "script"    : "./bin/server.js",
+      "env_production" : {
+        "APIPORT": 80,
+        "APIHOST": "dev.composersforum.us",
+        "NODE_ENV": "production",
+        "NODE_PATH": "./src",
+        "PORT": 3010
+      }
+    },
+  ],
+  "deploy" : {
+    "production" : {
+      "user" : "nodeus",
+      "host" : "dong.cape.io",
+      "ref"  : "origin/master",
+      "repo" : "https://github.com/cape-io/acf-client.git",
+      "path" : "/srv/node/acf-client",
+      "port" : "60022",
+      "post-deploy" : "npm i && npm run build && pm2 startOrRestart ecosystem.json --env production"
+    }
+  }
+}
