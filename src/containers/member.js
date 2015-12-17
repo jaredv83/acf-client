@@ -1,11 +1,16 @@
 import { connect } from 'react-redux'
 import Component from '../components/Members/MemberDetail'
-import find from 'lodash/collection/find'
 
-function mapStateToProps({ members: { data }, router: { params }, twitter }) {
-  const member = find(data, { slug: params.id })
+function mapStateToProps(state, ownProps) {
+  const {
+    entities: { member },
+    twitter,
+  } = state
+  const { id } = ownProps.params || {}
+
+  const memberData = member ? member[id] : {}
   return {
-    ...member,
+    ...memberData,
     twitter: twitter && twitter.data,
   }
 }
