@@ -1,10 +1,10 @@
-import React, { Component, PropTypes } from 'react';
-import { Link } from 'react-router';
+import React, { Component, PropTypes } from 'react'
+import { Link } from 'react-router'
 
 class MembersPreview extends Component {
 
   render() {
-    const {displayName, searchImg, intro, slug} = this.props;
+    const { displayName, searchImg, intro, slug } = this.props
 
     return (
       <div className="col-xs-12 col-sm-4 col-md-3 animated fadeIn masonry-item">
@@ -19,7 +19,7 @@ class MembersPreview extends Component {
               searchImg &&
               <Link to={ `/members/${slug}` }>
                 <img
-                  src={searchImg.url}
+                  src={`${searchImg.url}?w=200`}
                   style={{
                     maxHeight: '125px',
                     margin: 'auto',
@@ -39,7 +39,7 @@ class MembersPreview extends Component {
           </div>
         </div>
       </div>
-    );
+    )
   }
 }
 
@@ -53,6 +53,6 @@ MembersPreview.propTypes = {
   intro: PropTypes.string,
   slug: PropTypes.string.isRequired,
   usState: PropTypes.string,
-};
+}
 
-export default MembersPreview;
+export default MembersPreview
