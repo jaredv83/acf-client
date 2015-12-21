@@ -27,9 +27,10 @@ Built with **[babel-plugin-react-transform](https://github.com/gaearon/babel-plu
 
 ![](http://i.imgur.com/AhGY28T.gif)
 
+##Install
 ```
 git clone https://github.com/cape-io/boiler.git
-cd boiler
+cd acf-client
 npm install
 npm start
 open http://localhost:3000
